@@ -4,13 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="main.css" />
     <title>Three.js</title>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
       integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
@@ -34,6 +29,22 @@
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/renderers/Projector.js"></script>
   </head>
   <body>
+    <div id="overlay">
+      <button id="startButton">Play</button>
+      <div id="info">
+        <p href="https://threejs.org" target="_blank" rel="noopener noreferrer"></p>
+          Made with three.js
+        </p>
+        <br />
+        Music by
+        <a
+          href="https://soundcloud.com/susanna-capacchione"
+          target="_blank"
+          rel="noopener"
+          >me, Susanna Capacchione</a
+        >
+      </div>
+    </div>
     <audio id="myAudio" src="I'm still here.wav"></audio>
     <div id="webGL-container"></div>
   </body>

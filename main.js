@@ -4,6 +4,9 @@ $(function () {
   var audioSrc = ctx.createMediaElementSource(audio);
   var analyser = ctx.createAnalyser();
 
+  const startButton = document.getElementById("startButton");
+  startButton.addEventListener("click", play);
+
   audioSrc.connect(analyser);
   audioSrc.connect(ctx.destination);
 
@@ -176,6 +179,12 @@ $(function () {
     (fov = camera.fov), (zoom = 1.0), (inc = -0.01);
   }
 
+  function play() {
+    const overlay = document.getElementById("overlay");
+    overlay.remove();
+    audio.play();
+  }
+
   function render() {
     scene.traverse(function (e) {
       if (e instanceof THREE.Mesh) {
@@ -224,5 +233,4 @@ $(function () {
   });
   init();
   animate();
-  audio.play();
 });
