@@ -5,7 +5,12 @@ $(function () {
   var analyser = ctx.createAnalyser();
 
   const startButton = document.getElementById("startButton");
-  startButton.addEventListener("click", play);
+  startButton.addEventListener("click", function () {
+    const overlay = document.getElementById("overlay");
+    overlay.remove();
+    ctx.resume()
+    audio.play();
+  });
 
   audioSrc.connect(analyser);
   audioSrc.connect(ctx.destination);
@@ -177,12 +182,6 @@ $(function () {
     stats.domElement.style.top = "0px";
     $("#webGL-container").append(stats.domElement);
     (fov = camera.fov), (zoom = 1.0), (inc = -0.01);
-  }
-
-  function play() {
-    const overlay = document.getElementById("overlay");
-    overlay.remove();
-    audio.play();
   }
 
   function render() {
