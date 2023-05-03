@@ -8,7 +8,7 @@ $(function () {
   startButton.addEventListener("click", function () {
     const overlay = document.getElementById("overlay");
     overlay.remove();
-    ctx.resume()
+    ctx.resume();
     audio.play();
   });
 
